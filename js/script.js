@@ -214,13 +214,13 @@ function displayBookTrail(book){
 function checkBookIcon(bookType){
     switch (bookType){
         case "Alice in Wonderland":
-            return "Images/Alice-Icon.png";
+            return "images/Alice-Icon.png";
         case "His Dark Materials":
-            return "Images/HDM-Icon.png";
+            return "images/HDM-Icon.png";
         case "The Secret Garden":
-            return "Images/Garden-Icon.png";
+            return "images/Garden-Icon.png";
         case "The Chronicles of Narnia":
-            return "Images/Narnia-Icon.png";
+            return "images/Narnia-Icon.png";
         default:
             return ""; //Does not belong to a book
     }
