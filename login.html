@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTS-8">
+        <title>Literary Escapes</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/Icon.png">
+    </head>
+    <body style="overflow-y:hidden;">
+        <div class="header">
+            <div class="nav">
+                <a href="index.html"><img src="images/Logo-Day.png" id="logo" alt="Logo"></a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="#" onclick="comingSoon()">My Travels</a></li>
+                    <div class="user-menu">
+                        <a class="user-menu-link">My Profile<span class="dropdown-arrow">▾</span></a>
+                        <ul class="dropdown-menu" id="dropdown">
+                            <li><a href="login.html">Login</a> </li>
+                            <li><a href="#" onclick="comingSoon()">Profile</a></li>
+                            <li><a href="#" onclick="comingSoon()">Logout</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="page-menu">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-bar">  
+                    <button class="search-btn" onclick="comingSoon()">🔍</button>
+                </div>
+                <!--Night mode toggle placeholder-->
+                <button id="theme-toggle">🌙</button>
+            </div>
+        </div>
+
+        <div class="login-content">
+            <div class="login-box">
+                <h2>Login</h2>
+                    <form onsubmit="login(event)" method="POST" class="form-input">
+                        <div class="user-input">
+                            <label>Email</label>
+                            <input type="email" name="email" id="email" placeholder="e.g. example@gmail.com" required>
+                        </div>
+                        <div class="user-input">
+                            <label>Password</label>
+                            <input type="password" id="password" placeholder="password">
+                            <a onclick="comingSoon()" id="forgot-password">Forgot your password?</a>
+                        </div>
+                        <div class="user-input" id="tick-box">
+                            <input type="checkbox" name="remember">
+                            <label >Remember Me?</label>
+                        </div>
+
+                        <div class="login-btn">
+                            <button type="submit" value="log-in" class="login-button">Login</button>
+                        </div>
+                        <p>Don't have an account? <a href="register.html">Register Here</a></p>
+                        
+                </form>
+            </div>
+            
+        </div>
+        
+        <script src="js/locationData.js"></script>       
+        <script src="js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta charset="UTS-8">
+        <title>Literary Escapes</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/Icon.png">
+    </head>
+    <body style="overflow-y:hidden;">
+
+        <div class="header">
+            <div class="nav">
+                <a href="index.html"><img src="images/Logo-Day.png" id="logo" alt="Logo"></a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="#" onclick="comingSoon()">My Travels</a></li>
+                    <div class="user-menu">
+                        <a class="user-menu-link">My Profile<span class="dropdown-arrow">▾</span></a>
+                        <ul class="dropdown-menu" id="dropdown">
+                            <li><a href="login.html">Login</a> </li>
+                            <li><a href="#" onclick="comingSoon()">Profile</a></li>
+                            <li><a href="#" onclick="comingSoon()">Logout</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="page-menu">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-bar">  
+                    <button class="search-btn" onclick="comingSoom()">🔍</button>
+                </div>
+                <!--Night mode toggle placeholder-->
+                <button id="theme-toggle">🌙</button>
+            </div>
+        </div>
+        <div class="login-content">
+            <div class="register-box">
+                <h2>Create an Account</h2>
+                <form onsubmit="register(event)" class="form-input">
+                    <div class="user-input" id="name-input">
+                        <label>First name</label>
+                        <input type="text" name="firstName" id="fName" placeholder="e.g. Adam" required>
+                    </div>
+                    <div class="user-input" id="name-input">
+                        <label>Last name</label>
+                        <input type="text" name="lastName" id="lName" placeholder="e.g. Smith" required>
+                    </div>
+                    <div class="user-input">
+                        <label>Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="e.g. example@gmail.com" required>
+                    </div>
+                    <div class="user-input">
+                        <label>Password</label>
+                        <input type="password" name="password" id="password" placeholder="password" required>
+                    </div>
+                    <div class="user-input">
+                        <label>Confirm Password</label>
+                        <input type="password" name="confPassword" id="confPassword" placeholder="retype password" required>
+                    </div>
+                    <div class="user-input" id="tick-box">
+                        <input type="checkbox" id="emailCB" name="send-emails">
+                        <label >Want to receive travel reminders?</label>
+                    </div>
+                    <div class="login-btn">
+                        <button type="submit" value="register" class="login-button">Create</button>
+                    </div>
+                    <p>Already have an account? <a href="login.html">Log In</a></p>
+                </form>
+            </div>
+        </div>
+        <script src="js/locationData.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

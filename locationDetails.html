@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="UTS-8">
+        <title>Literary Escapes</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/Icon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    </head>
+    <body id="location-page">
+
+        <div class="header">
+            <div class="nav">
+                <a href="index.html"><img src="images/Logo-Day.png" id="logo" alt="Logo"></a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="#" onclick="comingSoon()">My Travels</a></li>
+                    <div class="user-menu">
+                        <a class="user-menu-link">My Profile<span class="dropdown-arrow">▾</span></a>
+                        <ul class="dropdown-menu" id="dropdown">
+                            <li><a href="login.html">Login</a> </li>
+                            <li><a href="#" onclick="comingSoon()">Profile</a></li>
+                            <li><a href="#" onclick="comingSoon()">Logout</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="page-menu">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-bar">
+                    <button class="search-btn" onclick="comingSoon()">🔍</button>
+                </div>
+                <!--Night mode toggle placeholder-->
+                <button id="theme-toggle">🌙</button>
+            </div>
+        </div>
+
+        
+        <div class="location-header" id="location-header">
+            <a class="return" href="explore.html">⇦ Explore</a>
+            <h1 id="location-name"></h1>
+            <button class="bookmark">
+                <i class="fa fa-bookmark"></i>
+                <span>Save</span>
+            </button>
+            <p id="rating"></p>
+        </div>
+
+        <div class="location-details">
+            <div class="location-details-left">
+                <h3>Description</h3>
+                <p id="description"></p>
+                <h3>Link to Book</h3>
+                <p id="book-link"></p>
+                <!--Some locations don't have a website attached e.g. parks so need condition if present-->
+                <div id="website">
+                </div>
+            </div>
+            <div class="location-details-right">
+                <div id="map-container">
+                    <iframe
+                        id="google-map"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p id="address"></p>
+                <p id="times"></p>
+                <div id="extra-info">
+                    <h3></h3>
+                </div>
+                <p id="price"></p>
+                
+            </div>
+            
+        </div>
+        <div class="review-container" id="review-container">
+            <h1>Reviews</h1>
+        </div>
+        
+        
+        <script src="js/reviewData.js"></script>
+        <script src="js/locationData.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+    
+</html>

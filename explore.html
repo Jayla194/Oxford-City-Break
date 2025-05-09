@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <meta charset="UTS-8">
+        <title>Literary Escapes</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/Icon.png">
+    </head>
+    <body id="explore-page">
+
+        <div class="header">
+            <div class="nav">
+                <a href="index.html"><img src="images/Logo-Day.png" id="logo" alt="Logo"></a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="explore/html">Explore</a></li>
+                    <li><a href="#" onclick="comingSoon()">My Travels</a></li>
+                    <div class="user-menu">
+                        <a class="user-menu-link">My Profile<span class="dropdown-arrow">▾</span></a>
+                        <ul class="dropdown-menu" id="dropdown">
+                            <li><a href="login.html">Login</a> </li>
+                            <li><a href="#" onclick="comingSoon()">Profile</a></li>
+                            <li><a href="#" onclick="comingSoon()">Logout</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="page-menu">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-bar">  
+                    <button class="search-btn">🔍</button>
+                </div>
+                <!--Night mode toggle placeholder-->
+                <button id="theme-toggle" onclick="darkMode()">🌙</button>
+            </div>
+        </div>
+        <!--Searching and Filtering Locations-->
+        <div class="explore-content">
+            <div class="explore-left">
+                <h1>Explore what Oxford has to offer</h1>
+
+                <div class="location-container">
+                    <div class="filter-left">
+                        <h3>Filters</h3>
+                        <button class="clear-filter" onclick="filterByBook('all')">Clear Filters</button>
+                        <div class="filter-list">
+                            <button onclick="filterByBook('Alice in Wonderland')" id="Alice">Alice in Wonderland</button>
+                            <button onclick="filterByBook('His Dark Materials')" id="HDM">His Dark Materials</button>
+                            <button onclick="filterByBook('The Secret Garden')" id="Garden">Secret Garden</button>
+                            <button onclick="filterByBook('The Chronicles of Narnia')" id="Narnia">Chronicles of Narnia</button>
+                        </div>
+                    </div>
+
+                    <div class="location-right">
+                        <div id="location-list"></div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Trails section-->
+            <div class="explore-right">
+                <h2>Cant Choose? Follow a Trail</h2>
+                <div class="book-container">
+                    <a href="bookTrails.html?book=Alice%20in%20Wonderland">
+                        <div class="book-trail" id="Alice">
+                            <img src="Images/Alice-Icon.png" alt="Image of the 'drink me' bottle from Alice in Wonderland." class="icon">
+                            <p>Alice In Wonderland</p>
+                        </div>
+                    </a>
+                    <div class="description">
+                        <p>Tumble down the rabbit hole and wander through the dreamlike corners of Oxford that sparked Lewis Carroll’s imagination — from Christ Church to secret gardens and whispering corridors.</p>
+                    </div>
+                </div>
+
+                <div class="book-container">
+                    <a href="bookTrails.html?book=His%20Dark%20Materials">
+                        <div class="book-trail" id="HDM">
+                            <img src="Images/HDM-Icon.png" class="icon" alt="Image of Compass from His Dark Materials">
+                            <p>His Dark Materials</p>
+                        </div>
+                    </a>
+                <div class="description">
+                    <p>Step between worlds as you trace Lyra’s journey across Jordan College, the Botanic Gardens, and the alleys of an alternate Oxford.</p>
+                </div>
+                </div>
+    
+                <div class="book-container">
+                    <a href="bookTrails.html?book=The%20Secret%20Garden">
+                        <div class="book-trail" id="Garden">
+                            <img src="Images/Garden-Icon.png" class="icon" alt="Image of a rose for the Secret Garden">
+                            <p>The Secret Garden</p>
+                        </div>
+                    </a>
+                    <div class="description">
+                        <p>Unlock the gate to hidden green spaces and timeless houses as you explore Oxford’s most tranquil spots — echoing Mary’s discovery of a world blooming with hope and change.</p>
+                    </div>
+                </div>
+    
+                <div class="book-container">
+                    <a href="bookTrails.html?book=The%20Chronicles%20of%20Narnia">
+                        <div class="book-trail" id="Narnia" >
+                            <img src="Images/Narnia-Icon.png" class="icon" alt="Image of a lion for The Chronicles of Narnia">
+                            <p>The Chronicles of Narnia</p>
+                        </div>
+                    </a>
+                    <div class="description">
+                        <p>Push open the wardrobe doors and follow in the footsteps of Lucy and her siblings through Oxford’s lamplit streets, grand doorways, and the majestic spires that inspired a land beyond.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+
+        
+        <script src="js/locationData.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

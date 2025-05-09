@@ -1,0 +1,713 @@
+/*Colours used for each book*/
+#Alice{
+    background-color:#d6c6ef;
+}
+#HDM{
+    background-color: #bedef4;
+}
+#Garden{
+    background-color: #fab1cf;
+}
+#Narnia{
+    background-color: #c1f7d2;
+}
+
+body {
+    font-family:'Roboto',sans-serif;
+    margin: 0;
+    padding: 0;
+    background:#fcf9f0;
+    color:#523728;
+}
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f4e8c9;
+    padding: 10px 40px;
+    box-shadow: 0 2px 10px rgba(82, 55, 40, 0.1);
+    position: sticky;
+    top:0;
+    z-index: 10;
+}
+
+/*Nav Bar*/
+.nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    margin-right: auto;
+    flex-grow:1;
+
+}
+#logo {
+    width: auto;
+    height: 80px;
+    max-width: 100%;
+    object-fit: contain;
+}
+#logo:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+.nav > a:first-child{
+    margin-right: auto;
+    padding-left: 0;
+}
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin:0;
+}
+.nav-links li{
+    margin: 0 15px;
+}
+.nav-links a{
+    text-decoration: none;
+    font-weight:700;
+    font-size:16px;
+    position: relative;
+    border-radius: 4px;
+    color:#523728
+}
+.nav-links a:hover{
+    color: #a37555;
+}
+/*Drop down menu*/
+.user-menu{
+    position:relative;
+}
+.user-menu-link{
+    display:flex;
+    align-items:center;
+    font-size:14;
+}
+.user-menu:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+/*Dropdown menu animation inspired from: https://blog.hubspot.com/website/drop-down-animation*/
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 5px;
+    min-width: 30px;
+    padding: 4px 0;
+    transform: translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        background 0.3s ease,
+        padding 0.3s ease;
+}
+.user-menu:hover .dropdown-menu {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.dropdown-menu li {
+    display: block;
+    padding: 8px 10px;
+    color: #523728;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.page-menu{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-left: auto;
+}
+.search-container{
+    display:flex;
+    align-items: center;
+}
+.search-bar {
+    padding: 5px;
+    border: 1px solid #523728;
+    border-radius: 5px;
+}
+.search-bar:focus{
+    accent-color: #523728;
+    caret-color: #523728;
+}
+.search-button {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/*Home page*/
+.home-container{
+    background-image: url('../images/Parchment.png');
+    background-size: cover;
+    background-position: center;
+    height:80%;
+    width:100%;
+    margin: 0;
+    top:0;
+    left:0;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+.home-container::before{
+    background: rgba(0, 0, 0, 0.1);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 93%;
+}
+.home-explore{
+    background-color:#ddb679;
+    color:white;
+    padding:10px 20px;
+    font-family: 'Roboto',sans-serif;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+.home-explore:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.intro-container{
+    background-color: #f4e8c9;
+    color:#523728;
+    text-align:center;
+    padding: 3rem 1rem;
+    font-family: 'Playfair Display',serif;
+}
+.intro-container h3{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.intro-container a{
+    margin: 0 10px;
+    background-color: #ddb679;
+    color:white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    font-family: 'Roboto',sans-serif;
+}
+.intro-container a:hover {
+    background-color: #cba366;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.feature-container{
+    position: relative;
+    background-color: #f8f4ea;
+    text-align: 5rem 1rem 8rem;
+    font-family: 'Playfair Display',serif;
+    color: #523728;
+    overflow:hidden;
+    text-align: center;
+}
+.feature-container::before{
+    content:'';
+    position: absolute;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+    background-image: url('../images/Open-Story-Book.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 250px;
+    width:100%;
+    z-index: 0;
+    pointer-events: none;
+}
+.feature-container h3{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+.feature-container ul{
+    list-style: none;
+    padding: 0;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+.feature-container li{
+    margin: 1rem 0;
+}
+.final-section{
+    background-color: #f4e8c9;
+}
+
+/*Login And Register Pages*/
+.login-content{
+    background-image: url('../images/Login-Background.avif');
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    position: relative;
+}
+.login-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    
+}
+.login-box, .register-box{
+    background-color: white;
+    border-radius: 10px;
+    padding: 0px 20px;
+    z-index: 1;
+    max-width: 500px;
+    width: 100%;
+    border-color: #523728;
+}
+.login-box h2, .register-box h2 {
+    color: #523728;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+.form-input{
+    display: block;
+    margin-bottom: 5px;
+}
+#name-input{
+    width:40%;
+    display:inline-flex;
+}
+.form-input input{
+    border: 1px solid #d3c9ae;
+    border-radius: 5px;
+    font-size: 16px;
+    padding:10px 20px;
+    width:100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.user-input{
+    padding:5px;
+}
+
+.form-input input:focus, .user-input input:focus {
+    outline: none;
+    border-color: #523728;
+    box-shadow: 0 0 5px rgba(163, 117, 85, 0.3);
+}
+.form-input label {
+    padding: 0px 10px;
+}
+#tick-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    accent-color: #523728;
+}
+#tick-box input {
+    width: auto;
+}
+.login-btn{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.login-button {
+    background-color: #a37555;
+    color:white;
+    border:none;
+    border-radius: 5px;
+    padding:12px;
+    width:30%;
+    font-size:16px;
+    font-weight: bold;
+    cursor:pointer;
+}
+.login-button:hover{
+    background-color: #523728;
+}
+.login-box p, .register-box p {
+    text-align: center;
+    font-size: 14px;
+    margin: 10px;
+}
+.login-box p a, .register-box p a {
+    color: #a37555;
+    text-decoration: none;
+}
+.login-box p a:hover , .register-box p a:hover{
+    text-decoration: underline;
+}
+
+/*Explore Page*/
+.explore-content{
+    display: flex;
+    text-align: center;
+}
+.explore-left{
+    width: 70%;
+    padding:20px;
+    height:100vh;
+}
+.explore-right{
+    width:30%;
+    padding:20px;
+}
+/*Searching and filtering section*/
+.location-container{
+    display: flex;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height:80%;
+    border-radius: 10px;
+}
+.filter-left{
+    width:20%;
+    padding:10px;
+}
+.location-right{
+    width:80%;
+    padding:20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+/*Left explore locations section*/
+#location-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 20px;
+}
+.location-card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.location-card a{
+    text-decoration: none;
+    color:#523728;
+}
+.location-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+.card-image{
+    height: 150px;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px ;
+}
+.book-icon{
+    height:50px;
+    width:50px;
+}
+/*right trails section with book buttons*/
+.book-container{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    }
+.book-trail{
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    width: 150px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.book-trail:hover {
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(90, 65, 35, 0.2);
+}
+.icon{
+    width:100px;
+    height:100px;
+    margin-bottom: 10px;
+}
+.description{
+    font-size: 14px;
+    max-width: 250px;
+    border: dashed #523728;
+}
+.clear-filter{
+    border-radius: 10px;
+    padding:5px;
+    margin:5px;
+    font-weight: bold;
+    box-shadow: #040404;
+    width:80%;
+    border: #858484 2px;
+    border-style: solid;
+}
+.clear-filter:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.filter-list button{
+    border-radius: 10px;
+    padding:5px;
+    margin:5px;
+    font-weight: bold;
+    border:none;
+    box-shadow: #523728;
+    width:80%;
+}
+.filter-list button:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/*Location Details Page*/
+.location-header{
+    width:100%;
+    color:white;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 80vh;
+    display: flex;
+    position:relative;
+    justify-content: center;
+    align-items: center;
+}
+.location-header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+.return{
+    border-radius: 4px;
+    font-weight: bold;
+    color:white;
+    padding: 5px;
+    top: 20px;
+    left:20px;
+    text-decoration: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow:0 0 5px rgb(0,0,.25s);
+}
+.location-header .return{
+    position:absolute;
+}
+.return:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+    background-color: #ddb679;
+}
+.location-header h1{
+    position: absolute;
+    font-size: 50px;
+}
+/*Inspiration from https://bbbootstrap.com/snippets/bookmark-animation-button-67364481*/
+.bookmark{
+    height: 40px;
+    width: 70px;
+    display: inline-flex;
+    justify-content: center;
+    padding: 5px 10px;
+    column-gap: 5px;
+    color: #523728;
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color .25s;
+    align-items: center;
+    font-size: 17px;
+    z-index: 1;
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+}
+.bookmark:hover{
+    background-color: #d3d1d1;
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+.bookmark:focus i{
+    animation: ribbon .25s cubic-bezier(.77 , 0 , 0.17, 1) forwards;
+}
+@keyframes ribbon{
+    0%{
+        transform: scaleY(.1);
+    }
+    25%{
+        transform: scaleY(.1);
+    }
+    100%{
+        color:#ddb679;
+    }
+}
+#rating{
+    font-size: 30px;
+    color:#ddb679;
+    z-index: 1;
+    bottom:0;
+    right: 150px;
+}
+.location-header #rating{
+    position: absolute;
+}
+.location-details{
+    display:flex;
+    font-size: 20px;
+}
+.location-details-left{
+    width:70%;
+    padding:40px;
+}
+.location-details-right{
+    width:30%;
+    padding:40px;
+    display: flex;
+    flex-direction: column;
+}
+#map-container {
+    width: 100%;
+    height: 300px;
+    border: none;
+    overflow: hidden;
+}
+#google-map {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.website-btn{
+    text-decoration: none;
+    color:white;
+    background-color: #523728;
+    padding:10px;
+    border-radius: 5px;
+}
+.website-btn:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+
+}
+.review-container{
+    display:grid;
+    grid-gap: 20px;
+    background-color: #f4e8c9;
+    border-color: #523728;
+    min-height: 100px;
+    padding:30px;
+
+}
+.review-card{
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+
+/*Book Trails*/
+.trails-container{
+    padding: 2rem;
+    margin: 0 auto;
+}
+#trail-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.trail-header .return{
+    color:#523728;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+#trail-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 420px; /* Enough for card + curve */
+    align-items: start;
+    gap: 4rem;
+}
+.trail-step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.trail-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.trail-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+
+.trail-card img {
+    height: 300px;
+    width: 500px;
+    border-radius: 10px 10px 0px 0px ;
+}
+
+.trail-card h3 {
+margin-top: 0.5rem;
+font-size: 1.2rem;
+color: #523728;
+text-decoration: none;
+}
+.trail-curve {
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.trail-curve.flip {
+    transform: scaleX(-1);
+}
+

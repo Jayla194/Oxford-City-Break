@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTS-8">
+        <title>Literary Escapes</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/Icon.png">
+    </head>
+    <body>
+
+        <div class="header">
+            <div class="nav">
+                <a href="index.html"><img src="images/Logo-Day.png" id="logo" alt="Logo"></a>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="#" onclick="comingSoon()">My Travels</a></li>
+                    <div class="user-menu">
+                        <a class="user-menu-link">My Profile<span class="dropdown-arrow">▾</span></a>
+                        <ul class="dropdown-menu" id="dropdown">
+                            <li><a href="login.html">Login</a> </li>
+                            <li><a href="#" onclick="comingSoon()">Profile</a></li>
+                            <li><a href="#" onclick="comingSoon()">Logout</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="page-menu">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-bar">  
+                    <button class="search-btn">🔍</button>
+                </div>
+                <!--Night mode toggle placeholder-->
+                <button id="theme-toggle" onclick="darkMode()">🌙</button>
+            </div>
+        </div>
+        
+        <div class="home-container">
+            <h1>'Step into the stories of Oxford'</h1>
+            <h3>Your Adventure awaits....</h3>
+            <a href="explore.html" class="home-explore">Explore</a>
+        </div>
+        <div class="intro-container">
+            <h3>Explore real-world locations</h3>
+            <p>Wonder through the pages of beloved tales and discover the Oxford that inspired them.</p></p>
+            <a href="register.html">Start your Adventure</a>
+            <a href="explore.html">Browse Locations</a>
+        </div>
+        <div class="feature-container">
+            <h3>Features</h3>
+            <ul>
+                <li>🔍 <strong>Search</strong> – Filter locations by book or attraction type.</li>
+                <li>🧭 <strong>Book Trails</strong> – Follow themed routes through Oxford's literary landmarks.</li>
+                <li>📌 <strong>Bookmark</strong> – Save places and create a custom itinerary for your trip.</li>
+                <li>💬 <strong>Review</strong> – Share your thoughts and earn Explorer badges.</li>
+            </ul>
+        </div>
+        <div class="final-section">
+            <h2>Start Your Story</h2>
+            <p>You've read the stories, now its your turn to live them</p>
+            <a href="register.html" class="btn">Sign Up</a>
+        </div>
+
+        
+        <script src="js/locationData.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
