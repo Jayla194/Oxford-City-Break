@@ -136,7 +136,7 @@ const locations = [
     "Description":"One of Oxford's most iconic and grandest colleges, Christ Church is known for its stunning architecture and spacious quads. It has inspired countless visitors with its historic halls, breathtaking gardens and links to famous alumni. <br>You can enjoy the views of the exterior buildings and surrounding meadows for free however to explore inside, you need to book a guided tour through the college. There are various tours offered along with a wide range of events throughout the year.",
     "Website":"https://www.chch.ox.ac.uk/visit",
     "Image":"https://www.chch.ox.ac.uk/sites/default/files/styles/highlight_text_with_image_mobile/public/2023-08/tom-quad-highlight.jpg.webp?itok=10NJrXAa",
-    "Book_Link":"This was the home of Alice Liddell, who was the inspiration for Alice. The dining hall here is thought to have inspired the Mad Hatter's Tea Party setting.",
+    "Book_Link":"This was the home of Alice Liddell, who was the inspiration for Alice. The dining hall here is thought to have inspired the Mad Hatter's Tea Party setting. The bells of Tom  Tower do not keep in time with the rest of Oxford's bells which encouraged the idea for the Mad Hatter's Tea party where it's always six o'clock.",
     "Opening_Hours":"10:00am - 4:15pm",
     "Price":"£",
     "Extra_Info":"<ul><li>Disabled Parking Available</li><li>Tours available in 13 different languages</li></ul>",
@@ -222,5 +222,22 @@ const locations = [
         "Extra_Info":"<ul><li>Booking Required</li><li>Vegan Menu</li><li>Gluten-Free Menu</li></ul>",
         "Address":"The Randolph Hotel, Beaumont Street, Oxford, OX1 2LN",
         "Average_Rating":"★★★★★"
+    },
+    {
+        "Location_ID":15,
+        "Location_Name":"Oxford Botanic Gardens",
+        "Location_Type":"Landmark",
+        "Book":"The Secret Garden",
+        "Trail_Number": 2,
+        "Description":"",
+        "Website":"https://www.glam.ox.ac.uk/botanic-garden",
+        "Image":"https://media.timeout.com/images/106268077/image.jpg",
+        "Book_Link":"",
+        "Opening_Hours":"10:00am - 16:00pm",
+        "Price":"£",
+        "Extra_Info":"",
+        "Address":"Rose Ln, Oxford OX1 4AZ",
+        "Average_Rating":"★★★★☆"
     }
+
 ]

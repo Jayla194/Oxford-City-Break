@@ -144,15 +144,19 @@ function displayBookTrail(book){
     switch (book){
         case "Alice in Wonderland":
             themeId = "Alice";
+            trailLink = "https://www.google.co.uk/maps/dir/S+Parks+Rd,+Oxford+OX1+3RF/The+Randolph+Hotel+Oxford,+a+Graduate+by+Hilton,+Beaumont+Street,+Oxford/Christ+Church+College,+Saint+Aldate's,+Oxford/Alice's+Shop,+Saint+Aldate's,+Oxford/@51.7552073,-1.2599328,16z/data=!3m1!5s0x4876c6b0250f3f7b:0xc1be2de0b3480e1e!4m26!4m25!1m5!1m1!1s0x4876c6a90ac207e7:0xa76a8f719eabb32b!2m2!1d-1.253087!2d51.7585245!1m5!1m1!1s0x4876c6a5d287b211:0x3a15f09b044fe952!2m2!1d-1.2596601!2d51.7550875!1m5!1m1!1s0x4876c6b023ce50cf:0x4e7d5b2a18299b40!2m2!1d-1.2558446!2d51.7498733!1m5!1m1!1s0x4876c6b068eef27b:0x73608b2e6523257c!2m2!1d-1.2567422!2d51.748897!3e2?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D";
             break;
         case "His Dark Materials":
             themeId = "HDM";
+            trailLink = "";
             break;
         case "The Secret Garden":
             themeId = "Garden";
+            trailLink = "";
             break;
         case "The Chronicles of Narnia":
             themeId = "Narnia"
+            trailLink = "";
             break;
     }
 
@@ -160,6 +164,7 @@ function displayBookTrail(book){
     document.getElementsByClassName("header")[0].id = themeId;
     document.getElementsByClassName("return")[0].id = themeId;
     document.getElementById('book-name').textContent  = book;
+    document.getElementById('trail-link').href = trailLink;
 
     //find div class nav and give corresponding book id attribute
     const trailContainer = document.getElementById('trail-content');
@@ -214,13 +219,13 @@ function displayBookTrail(book){
 function checkBookIcon(bookType){
     switch (bookType){
         case "Alice in Wonderland":
-            return "images/Alice-Icon.png";
+            return "Images/Alice-Icon.png";
         case "His Dark Materials":
-            return "images/HDM-Icon.png";
+            return "Images/HDM-Icon.png";
         case "The Secret Garden":
-            return "images/Garden-Icon.png";
+            return "Images/Garden-Icon.png";
         case "The Chronicles of Narnia":
-            return "images/Narnia-Icon.png";
+            return "Images/Narnia-Icon.png";
         default:
             return ""; //Does not belong to a book
     }
@@ -234,6 +239,29 @@ function filterByBook(name){
         const filtered = locations.filter(location => location.Book === name);
         displayLocations(filtered);
     }
+}
+
+function showAlert(message){
+    switch (message){
+        case "bookmark":
+            alert = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>📜 Location saved to bookmarks!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>`;
+            break;
+        case "success":
+            alert = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Successful Login
+                </button>
+            </div>`;
+            break;
+    }
+    document.getElementById("alert-placeholder").innerHTML = alert;
+    setTimeout(() => {
+                $('.alert').alert('close');
+            }, 3000);
 }
 
 //Finds locations for a book trail and orders them
