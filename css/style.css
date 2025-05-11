@@ -236,6 +236,7 @@ a {
     color: #523728;
     overflow:hidden;
     text-align: center;
+    height:550px;
 }
 .feature-container::before{
     content:'';
@@ -247,7 +248,7 @@ a {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom center;
-    height: 250px;
+    height: 300px;
     width:100%;
     z-index: 0;
     pointer-events: none;
@@ -270,6 +271,26 @@ a {
 }
 .final-section{
     background-color: #f4e8c9;
+    text-align: center;
+    color:#523728;
+    padding: 3rem 1rem;
+    font-family: 'Playfair Display',serif;
+}
+.final-section a{
+    margin: 0 10px;
+    background-color: #523728;
+    color:white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    font-family: 'Roboto',sans-serif;
+}
+.final-section a:hover {
+    background-color: #332219;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
 }
 
 /*Login And Register Pages*/
