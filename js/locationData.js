@@ -65,7 +65,7 @@ const locations = [
     },
     {
         "Location_ID": 5,
-        "Location_Name": "Bodlelian Library",
+        "Location_Name": "Bodleian Library",
         "Location_Type": "Activity",
         "Book": "His Dark Materials",
         "Trail_Number": 4,
@@ -217,7 +217,7 @@ const locations = [
         "Website":"https://www.thealiceoxford.com/",
         "Image":"https://dancinginhighheels.com/wp-content/uploads/2022/07/CE68605B-F034-4A6C-B99D-62E3FD51002A_1_201_a-1440x949.jpeg",
         "Book_Link":"The Alice Restaurant offers a wide range of Wonderland inpsired dishes and cocktails.",
-        "Opening_Hours":"Restaurant and Bar: 12-9pm <br> Alice in Wonderland Menu: 12-4pm",
+        "Opening_Hours":"Restaurant and Bar: 12-9pm Alice in Wonderland Menu: 12-4pm",
         "Price":"££",
         "Extra_Info":"<ul><li>Booking Required</li><li>Vegan Menu</li><li>Gluten-Free Menu</li></ul>",
         "Address":"The Randolph Hotel, Beaumont Street, Oxford, OX1 2LN",
@@ -238,6 +238,54 @@ const locations = [
         "Extra_Info":"",
         "Address":"Rose Ln, Oxford OX1 4AZ",
         "Average_Rating":"★★★★☆"
+    },
+    {
+        "Location_ID":16,
+        "Location_Name":"The Ornate Door",
+        "Location_Type":"Landmark",
+        "Book":"The Chronicles of Narnia",
+        "Trail_Number": 2,
+        "Description":"",
+        "Website":null,
+        "Image":"https://visitoxfordtours.com/wp-content/uploads/2023/07/narnia-in-oxford1.jpg.webp",
+        "Book_Link":"",
+        "Opening_Hours":"24/7",
+        "Price":"Free",
+        "Extra_Info":"",
+        "Address":"",
+        "Average_Rating":"★★☆☆☆"
+    },
+    {
+        "Location_ID":17,
+        "Location_Name":"Magdalen College Cloisters",
+        "Location_Type":"Landmark",
+        "Book":"The Chronicles of Narnia",
+        "Trail_Number": 3,
+        "Description":"<strong>Ticket Prices<ul><li>Adults: £10.00</li><li>Seniors: £9.00</li><li>Family Ticket: £28.00</li></ul></strong>",
+        "Website":"https://www.magd.ox.ac.uk/visiting-magdalen-college/",
+        "Image":"https://englandrover.com/wp-content/uploads/2018/10/magdalen-college-oxford-exterior.jpg",
+        "Book_Link":"",
+        "Opening_Hours":"10:00am - 17:00pm",
+        "Price":"£",
+        "Extra_Info":"",
+        "Address":"",
+        "Average_Rating":"★★★☆☆"
+    },
+    {
+        "Location_ID":18,
+        "Location_Name":"The Story Museum",
+        "Location_Type":"Activity",
+        "Book":"The Chronicles of Narnia",
+        "Trail_Number": 4,
+        "Description":"Walk through the pages as you step through the wardrobe and into the land of Narnia. While The Story Museum offers a range of exhibits we recommend losing yourself in the Chronicles of Narnia exhibition ",
+        "Website":"https://www.storymuseum.org.uk/explore/the-enchanted-library",
+        "Image":"https://storymuseum.s3-assets.com/_1023x682_crop_center-center_80_none/Narnia_credit_Diane_Auckland.jpg",
+        "Book_Link":"",
+        "Opening_Hours":"10:00am - 16:30pm",
+        "Price":"£",
+        "Extra_Info":"<ul><li>Phone Number: 01865 790050</li></ul>",
+        "Address":"42 Pembroke St, Oxford OX1 1BP",
+        "Average_Rating":"★★★☆☆"
     }
 
 ]

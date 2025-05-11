@@ -14,25 +14,28 @@ function register(event){
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const confPassword = document.getElementById("confPassword").value;
+    //Not being used for this prototype but would be saved in a database
     const reminders = document.getElementById("emailCB").value;
 
 
     if (!fName || !lName || !email || !password || !confPassword){
-        alert("Please complete all fields");
+        showAlert("accountError");
         return;
     }
     else if(password != confPassword){
-        alert("Passwords do not match!\nPlease re-enter the password.");
+        showAlert("accountError");
         return;
     }
     else{
         localStorage.setItem("user",JSON.stringify({
             fName,lName,email,password})
         );
-        alert("Registration Successful");
+        showAlert("accountSuccess");
         
         //redirect to login page
+        setTimeout(() => {
         window.location.href = "login.html";
+    }, 1000);
     }
 }
 
@@ -43,11 +46,13 @@ function login(event){
 
     const savedUser = JSON.parse(localStorage.getItem("user"));
     if(!savedUser || savedUser.email !== email || savedUser.password !== password){
-        alert("Invalid username or password");
+        showAlert("loginError");
     }
     else{
-        alert("Login Successful");
+        showAlert("loginSuccess");
+        setTimeout(() => {
         window.location.href = "explore.html";
+    }, 1000);
     }
 }
 //Explore, Locations and Book Trails
@@ -171,8 +176,6 @@ function displayBookTrail(book){
     trailContainer.innerHTML = '';
 
     trail_list.forEach((location, i )=> {
-        const trailStep = document.createElement('div');
-        trailStep.classList.add('trail-step');
 
         const trail_card = document.createElement('div');
         trail_card.classList.add('trail-card');
@@ -180,39 +183,17 @@ function displayBookTrail(book){
         //creating the alternating diagonal placement
         const column = (i%2)+1;
         const row = i+1;
-        trailStep.style.gridColumn = column;
-        trailStep.style.gridRow = row;
+        trail_card.style.gridColumn = column;
+        trail_card.style.gridRow = row;
 
         //Location Cards
         trail_card.innerHTML = `
         <a href="locationDetails.html?id=${encodeURIComponent(location.Location_ID)}">
-        <img class="card-image" src=${location.Image}">
+        <img class="card-image" src=${location.Image}" alt= "Image of ${location.Location_Name}">
         <h3>${location.Location_Name}</h3>
         </a>`;
-        trailStep.appendChild(trail_card);
+        trailContainer.appendChild(trail_card);
 
-        //Creating the dashed line effect with SVG
-        if (i < trail_list.length -1){
-            const curve = document.createElementNS("http://www.w3.org/2000/svg","svg");
-            curve.setAttribute("width","500");
-            curve.setAttribute("height","500");
-            curve.setAttribute("viewBox", "0 0 500 500");
-            curve.classList.add("trail-curve");
-            
-            //Flips the curve in the other direction
-            if (i % 2 !==0) curve.classList.add("flip");
-        
-            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            path.setAttribute("d", "M0,0 L400,0 Q400,0 400,300 L400,400");
-            path.setAttribute("stroke","#523728");
-            path.setAttribute("stroke-width", "10");
-            path.setAttribute("fill", "none");
-            path.setAttribute("stroke-dasharray", "5,5");
-
-            curve.appendChild(path);
-            trailStep.appendChild(curve);
-        }
-        trailContainer.appendChild(trailStep);
 });
 }
 //Will check what book the location is linked to so the corresponding icon can be displayed.
@@ -230,6 +211,8 @@ function checkBookIcon(bookType){
             return ""; //Does not belong to a book
     }
 }
+
+
 //Filters the list of books displayed
 function filterByBook(name){
     if (name === "all"){
@@ -242,6 +225,7 @@ function filterByBook(name){
 }
 
 function showAlert(message){
+    let alert = "";
     switch (message){
         case "bookmark":
             alert = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -251,17 +235,36 @@ function showAlert(message){
             </button>
             </div>`;
             break;
-        case "success":
+        case "loginSuccess":
             alert = `<div class="alert alert-success alert-dismissible fade show" role="alert">
-                Successful Login
+                <strong>✓ Success</strong> Login Successful
                 </button>
             </div>`;
             break;
+        case "accountSuccess":
+            alert = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>✓ Success</strong> Registration Successful
+                </button>
+            </div>`;
+            break;
+        case "loginError":
+            alert = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>！Error</strong> Email or password incorrect. Try Again
+                </button>
+            </div>`;
+            break;
+        case "accountError":
+            alert = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>！Error</strong> One or more details are incorrect. Try Again
+                </button>
+            </div>`;
+            break;
+
     }
     document.getElementById("alert-placeholder").innerHTML = alert;
     setTimeout(() => {
                 $('.alert').alert('close');
-            }, 3000);
+            }, 2000);
 }
 
 //Finds locations for a book trail and orders them

@@ -17,7 +17,7 @@
                     <li><a href="#" onclick="comingSoon()">My Travels</a></li>
                     <div class="user-menu">
                         <a class="user-menu-link">My Profile<span class="dropdown-arrow">▾</span></a>
-                        <ul class="dropdown-menu" id="dropdown">
+                        <ul class="nav-dropdown-menu" id="dropdown">
                             <li><a href="login.html">Login</a> </li>
                             <li><a href="#" onclick="comingSoon()">Profile</a></li>
                             <li><a href="#" onclick="comingSoon()">Logout</a></li>
@@ -44,7 +44,7 @@
                     <div class="filter-left">
                         <h3>Filters</h3>
                         <button class="clear-filter" onclick="filterByBook('all')">Clear Filters</button>
-                        <div class="filter-list">
+                        <div class="filter-list" id="filter-list">
                             <button onclick="filterByBook('Alice in Wonderland')" id="Alice">Alice in Wonderland</button>
                             <button onclick="filterByBook('His Dark Materials')" id="HDM">His Dark Materials</button>
                             <button onclick="filterByBook('The Secret Garden')" id="Garden">Secret Garden</button>
@@ -62,7 +62,7 @@
 
             <!--Trails section-->
             <div class="explore-right">
-                <h2>Cant Choose? Follow a Trail</h2>
+                <h2>Can't Choose? Follow a Trail</h2>
                 <div class="book-container">
                     <a href="bookTrails.html?book=Alice%20in%20Wonderland">
                         <div class="book-trail" id="Alice">

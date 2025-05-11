@@ -19,6 +19,9 @@ body {
     background:#fcf9f0;
     color:#523728;
 }
+a {
+    text-decoration: none;
+}
 .header{
     display:flex;
     align-items: center;
@@ -88,7 +91,7 @@ body {
     transform: rotate(180deg);
 }
 /*Dropdown menu animation inspired from: https://blog.hubspot.com/website/drop-down-animation*/
-.dropdown-menu {
+.nav-dropdown-menu {
     position: absolute;
     top: 100%;
     right: 0;
@@ -106,13 +109,13 @@ body {
         background 0.3s ease,
         padding 0.3s ease;
 }
-.user-menu:hover .dropdown-menu {
+.user-menu:hover .nav-dropdown-menu {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
-.dropdown-menu li {
+.nav-dropdown-menu li {
     display: block;
     padding: 8px 10px;
     color: #523728;
@@ -377,6 +380,30 @@ body {
 .login-box p a:hover , .register-box p a:hover{
     text-decoration: underline;
 }
+.alert{
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 5px;
+    animation: fadeDown 0.5s ease-out;
+}
+.alert .close {
+    background: none;
+    border: none;
+    color: #5a3e36;
+    font-size:larger;
+    font-weight: bold;
+    cursor: pointer;
+}
+.alert .close:hover {
+    color: #a0522d;
+}
+#alert-placeholder{
+    position: fixed;
+    top: 20%;
+    left: 40%;
+    z-index: 10;
+}
+
 
 /*Explore Page*/
 .explore-content{
@@ -404,6 +431,7 @@ body {
     width:20%;
     padding:10px;
 }
+
 .location-right{
     width:80%;
     padding:20px;
@@ -547,6 +575,10 @@ body {
     position: absolute;
     font-size: 50px;
 }
+.location-header #alert-placeholder{
+    position:absolute;
+    top:20px;
+}
 /*Inspiration from https://bbbootstrap.com/snippets/bookmark-animation-button-67364481*/
 .bookmark{
     height: 40px;
@@ -576,34 +608,6 @@ body {
 .bookmark:focus i{
     animation: ribbon .25s cubic-bezier(.77 , 0 , 0.17, 1) forwards;
 }
-
-.alert {
-background-color: #fff3cd;
-border: 1px solid #ffeeba;
-color: #5a3e36;
-box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-border-radius: 12px;
-padding: 5px;
-animation: fadeDown 0.5s ease-out;
-}
-.location-header #alert-placeholder{
-    position:absolute;
-    top:20px;
-    z-index:10;
-}
-.alert .close {
-background: none;
-border: none;
-color: #5a3e36;
-font-size:larger;
-font-weight: bold;
-cursor: pointer;
-}
-
-.alert .close:hover {
-  color: #a0522d; /* warmer hover tone */
-}
-
 #rating{
     font-size: 30px;
     color:#ddb679;
@@ -669,10 +673,21 @@ cursor: pointer;
 /*Book Trails*/
 .trails-container{
     padding: 2rem;
+    background-image: url('../images/Trail-Background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    max-width: 800px;
+    height: 2000px;
     margin: 0 auto;
 }
 #trail-header{
     display:flex;
+    width:100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -683,20 +698,15 @@ cursor: pointer;
 #trail-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 420px; /* Enough for card + curve */
+    grid-auto-rows: 320px;
     align-items: start;
     gap: 4rem;
-}
-.trail-step{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
 }
 .trail-card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 10px;
+    background-color: white;
 }
 .trail-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -705,8 +715,10 @@ cursor: pointer;
 }
 
 .trail-card img {
-    height: 300px;
-    width: 500px;
+    width: 100%;
+    height:250px;
+    min-width: 400px;
+    place-self: center;
     border-radius: 10px 10px 0px 0px ;
 }
 
@@ -714,16 +726,8 @@ cursor: pointer;
 margin-top: 0.5rem;
 font-size: 1.2rem;
 color: #523728;
-text-decoration: none;
-}
-.trail-curve {
-    margin-top: 20px;
-    max-width: 100%;
 }
 
-.trail-curve.flip {
-    transform: scaleX(-1);
-}
 
 
 /* Key Frames */
