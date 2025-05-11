@@ -259,6 +259,12 @@ function showAlert(message){
                 </button>
             </div>`;
             break;
+        case "logout":
+            alert = `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>！Success</strong> User Logged Out Successfully
+                </button>
+            </div>`;
+            break;
 
     }
     document.getElementById("alert-placeholder").innerHTML = alert;

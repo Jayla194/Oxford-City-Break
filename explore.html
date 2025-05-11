@@ -20,7 +20,7 @@
                         <ul class="nav-dropdown-menu" id="dropdown">
                             <li><a href="login.html">Login</a> </li>
                             <li><a href="#" onclick="comingSoon()">Profile</a></li>
-                            <li><a href="#" onclick="comingSoon()">Logout</a></li>
+                            <li><a href="#" onclick="showAlert('logout')">Logout</a></li>
                         </ul>
                     </div>
                 </ul>
@@ -37,6 +37,7 @@
         </div>
         <!--Searching and Filtering Locations-->
         <div class="explore-content">
+            <div id="alert-placeholder"></div>
             <div class="explore-left">
                 <h1>Explore what Oxford has to offer</h1>
 
@@ -115,7 +116,8 @@
         </div>
         
 
-        
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/locationData.js"></script>
         <script src="js/script.js"></script>
     </body>

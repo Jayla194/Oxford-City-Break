@@ -12,7 +12,7 @@ const reviews = [
     },
     {
         "Review_ID":2,
-        "Location_ID":13,
+        "Location_ID":6,
         "User_ID":1,
         "User_Name":"Jayla Green",
         "Rating":"★★★★☆",
@@ -21,7 +21,7 @@ const reviews = [
     },
     {
         "Review_ID":3,
-        "Location_ID":13,
+        "Location_ID":6,
         "User_ID":2,
         "User_Name":"Mary Smith",
         "Rating":"★★☆☆☆",
